@@ -5,7 +5,7 @@
 
 int main(void)
 {
-	setlocale(LC_ALL, "");  // ÈÃ¿í×Ö·û I/O °´ÏµÍ³ÇøÓòÉèÖÃ¹¤×÷£¨UTF-8 ³£¼û£©
+	setlocale(LC_ALL, "");  // è®©å®½å­—ç¬¦ I/O æŒ‰ç³»ç»ŸåŒºåŸŸè®¾ç½®å·¥ä½œï¼ˆUTF-8 å¸¸è§ï¼‰
 	wint_t ch;
 	int count_1,count_dot,sumex;
 	count_1 = count_dot =sumex =0;
@@ -16,20 +16,20 @@ int main(void)
 		{
 		case L'#':
 			goto quit;
-		case L'!':            // °ë½Ç
-			wprintf(L"!!");   // »ò putwchar(L'!'); putwchar(L'!');
+		case L'!':            // åŠè§’
+			wprintf(L"!!");   // æˆ– putwchar(L'!'); putwchar(L'!');
 			count_1++;
 			break;
-		case L'£¡':           // È«½Ç
-			wprintf(L"£¡£¡");
+		case L'ï¼':           // å…¨è§’
+			wprintf(L"ï¼ï¼");
 			count_1++;
 			break;
-		case L'.':            // Ó¢ÎÄ¾äºÅ
+		case L'.':            // è‹±æ–‡å¥å·
 			putwchar(L'!');
 			count_dot++;
 			break; 
-		case L'¡£':           // ÖĞÎÄ¾äºÅ
-			putwchar(L'£¡');  // »ò¸Ä³É L'!' ¿´ÄãĞèÇó
+		case L'ã€‚':           // ä¸­æ–‡å¥å·
+			putwchar(L'ï¼');  
 			count_dot++;
 			break;
 		default :
@@ -38,7 +38,8 @@ int main(void)
 		
     }
 quit:
-	wprintf(L"\nÌæ»»'¡£/.'£º%d\nÌæ»»'!£¨º¬È«/°ë½Ç£©': %d\n×Ü¹²Ìæ»»£º%d\n",
+	wprintf(L"\næ›¿æ¢'ã€‚/.'ï¼š%d\næ›¿æ¢'!ï¼ˆå«å…¨/åŠè§’ï¼‰': %d\næ€»å…±æ›¿æ¢ï¼š%d\n",
 		count_dot, count_1, count_1 + count_dot);
 	return 0;
+
 }
